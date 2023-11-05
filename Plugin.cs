@@ -69,8 +69,6 @@ namespace ClipOverlay
             TagText.font = GameObject.Find("Player Objects/Local VRRig/Local Gorilla Player/rig/NameTagAnchor/NameTagCanvas/Text/")?.GetComponent<Text>().font;
             TagText.color = Color.white;
             TagText.alignment = TextAnchor.MiddleCenter;
-            TagText.material.shader = Shader.Find("GUI/Text Shader");
-
            
             GameObject fpsObject = new GameObject("FPS Text");
             fpsObject.transform.SetParent(TagThingi.transform, false);
@@ -79,7 +77,6 @@ namespace ClipOverlay
             FPSText.font = GameObject.Find("Player Objects/Local VRRig/Local Gorilla Player/rig/NameTagAnchor/NameTagCanvas/Text/")?.GetComponent<Text>().font;
             FPSText.color = Color.green;
             FPSText.alignment = TextAnchor.UpperRight;
-            FPSText.material.shader = Shader.Find("GUI/Text Shader");
 
             RectTransform tagRectTransform = TagText.GetComponent<RectTransform>();
             RectTransform fpsRectTransform = FPSText.GetComponent<RectTransform>();

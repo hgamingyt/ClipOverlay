@@ -2,3 +2,5 @@
 
 Clip Overlay is a mod for Gorilla Tag that when you tag someone it will take a screenshot! 📸 
                                               adds some more funny stuff too!
+
+please dm: @boowoomp on discord for help with the mod!

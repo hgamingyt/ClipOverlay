@@ -29,6 +29,9 @@
     <Reference Include="clipper_library">
       <HintPath>$(GameAssemblyPath)\clipper_library.dll</HintPath>
     </Reference>
+    <Reference Include="HoneyLib">
+      <HintPath>..\..\Program Files\Oculus\Software\Software\another-axiom-gorilla-tag\BepInEx\plugins\HoneyLib\HoneyLib.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Security">
       <HintPath>$(GameAssemblyPath)\Mono.Security.dll</HintPath>
     </Reference>
@@ -283,9 +286,6 @@
     </Reference>
     <Reference Include="websocket-sharp">
       <HintPath>$(GameAssemblyPath)\websocket-sharp.dll</HintPath>
-    </Reference>
-    <Reference Include="HoneyLib">
-      <HintPath>$(GameAssemblyPath)\HoneyLib.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

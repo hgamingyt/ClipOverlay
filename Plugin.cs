@@ -10,6 +10,7 @@ using UnityEngine.UI;
 using System.Collections;
 using HoneyLib;
 using HoneyLib.Events;
+using UnityEngine.InputSystem;
 
 namespace ClipOverlay
 {
@@ -22,6 +23,7 @@ namespace ClipOverlay
         public static Text TagText = null;
         public static Text FPSText = null;
         public static string screenshotPath;
+        public static ConfigEntry<bool> ShowFPS;
 
         [HarmonyPatch(typeof(GorillaTagger), "Update")]
         [HarmonyPostfix]
@@ -47,6 +49,7 @@ namespace ClipOverlay
         void Awake()
         {
             Utilla.Events.GameInitialized += GameInitialized;
+            ShowFPS = Config.Bind("Settings", "ShowFPS", true);
         }
 
         private void GameInitialized(object sender, EventArgs e)
@@ -131,9 +134,20 @@ namespace ClipOverlay
 
         void Update()
         {
+            if (Keyboard.current.fKey.wasPressedThisFrame)
+            {
+                ShowFPS.Value = !ShowFPS.Value;
+            }
             if (FPSText != null)
             {
-                FPSText.text = "FPS: " + (1f / Time.deltaTime).ToString("F0");
+                if (ShowFPS.Value == true)
+                {
+                    FPSText.text = "FPS: " + (1f / Time.deltaTime).ToString("F0");
+                }
+                else 
+                {
+                    FPSText.text = "";
+                }
             }
         }
     }
